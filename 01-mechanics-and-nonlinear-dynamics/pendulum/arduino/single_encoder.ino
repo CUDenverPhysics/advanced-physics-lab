@@ -39,15 +39,11 @@ uint8_t SPI_T (uint8_t msg)
 void loop()
 { 
     SPI.begin(); // start transmition
-    
-    digitalWrite(CS,LOW); // Select SPI device
 
     SPI_T(0x10); //issue read command
     temp[2] = SPI_T(0x00); // Issue no operation command - receive null statement
     temp[0] = SPI_T(0x00); // Issue no operation command - receive MSB   
     temp[1] = SPI_T(0x00); // Issue no operation command - receive LSB
-    
-    digitalWrite(CS,HIGH); // Deselect SPI device
     
     SPI.end(); // end transmition
 
