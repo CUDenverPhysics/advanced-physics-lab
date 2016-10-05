@@ -28,7 +28,8 @@ end
 % which the data will be plotted is also created
    
 buf_len = 5000;
-limits = [0 2];
+limits = [0 2]; % Uncomment this line to plot pressure
+%limits = [0 360]; % Uncomment this line to plot angular position
     
 l = animatedline;
 axis([0, buf_len, limits]);
@@ -59,7 +60,8 @@ while (get(button,'Value') == 0 )
     data(i,1) = bar;
     data(i,2) = temp;
     data(i,3) = deg;
-    addpoints(l,b,bar);
+    addpoints(l,b,bar); % Uncomment this line to plot pressure
+    %addpoints(l,b,deg); % Uncomment this line to plot angular position
     
     if (mod(i,10) == 0)
         drawnow;
