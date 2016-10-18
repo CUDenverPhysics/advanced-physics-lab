@@ -46,6 +46,7 @@ blah = readData(arduino);
 
 blah = readData(arduino);
 i = 0;
+tic;
 
 while (get(button,'Value') == 0 )
     i = i+1;
@@ -60,6 +61,7 @@ while (get(button,'Value') == 0 )
     data(i,1) = bar;
     data(i,2) = temp;
     data(i,3) = deg;
+    data(i,4) = toc;
     addpoints(l,b,bar); % Uncomment this line to plot pressure
     %addpoints(l,b,deg); % Uncomment this line to plot angular position
     
